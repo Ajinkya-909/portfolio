@@ -5,8 +5,6 @@ import LogoSection from "@/componenets/LogoSection";
 import NavBar from "@/componenets/NavBar";
 import Showcase from "@/componenets/Showcase";
 import Techstack from "@/componenets/TechStack";
-import GlowCard from "@/componenets/ui/Skills";
-import Model from "@/componenets/ui/Model";
 import Skills from "@/componenets/ui/Skills";
 
 
