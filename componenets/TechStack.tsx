@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -52,7 +53,7 @@ const Techstack = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            ref={(el) => (containerRefs.current[index] = el)}
+            ref={(el) => {containerRefs.current[index] = el}}
             className="flex flex-col items-center border-2 border-white-50 shadow-md rounded-xl p-4"
           >
             <h2 className="md:text-4xl text-2xl text-white font-semibold mb-2">{item.title}</h2>
