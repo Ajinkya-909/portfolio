@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import React, { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -16,33 +17,41 @@ const Techstack = () => {
   ];
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const containerRefs = useRef<(HTMLDivElement | null)[]>([]); // ✅ Typed properly
+  const containerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useGSAP(() => {
-    containerRefs.current.forEach((card, index) => {
-      if (!card) return;
-      const isEven = (index + 1) % 2 === 0;
+  const isMobile = () => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth <= 768;
+  };
+  if (!isMobile) {
+    useGSAP(() => {
+      containerRefs.current.forEach((card, index) => {
+        if (!card) return;
+        const isEven = (index + 1) % 2 === 0;
+  
+        gsap.fromTo(
+          card,
+          { opacity: 0, x: isEven ? 50 : -50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            delay: 0.1 * (index + 1),
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom-=100",
+            },
+          }
+        );
+      });
+  
+      if (sectionRef.current) {
+        gsap.fromTo(sectionRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 });
+      }
+    }, []);
+    
+  }
 
-      gsap.fromTo(
-        card,
-        { opacity: 0, x: isEven ? 50 : -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.1 * (index + 1),
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100",
-          },
-        }
-      );
-    });
-
-    if (sectionRef.current) {
-      gsap.fromTo(sectionRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 });
-    }
-  }, []);
 
   return (
     <div id="techstack" ref={sectionRef} className="p-4 m-8">
@@ -57,7 +66,7 @@ const Techstack = () => {
             className="flex flex-col items-center border-2 border-white-50 shadow-md rounded-xl p-4"
           >
             <h2 className="md:text-4xl text-2xl text-white font-semibold mb-2">{item.title}</h2>
-            <img src={item.image} alt={item.name} className="w-auto h-40 object-cover rounded-md mb-2" />
+            <img loading='lazy' src={item.image} alt={item.name} className="w-auto h-40 max-sm:w-full max-sm:h-auto object-cover rounded-md mb-2" />
             <p className="text-lg text-gray-400">{item.name}</p>
           </div>
         ))}

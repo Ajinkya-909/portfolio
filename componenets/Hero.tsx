@@ -3,8 +3,7 @@ import React from 'react'
 import { words } from '../constants'
 import Button from './ui/Button'
 import Model from './ui/Model'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
+import Image from 'next/image'
 
 
 
@@ -47,7 +46,7 @@ const Hero = () => {
                     />
                 </div>
             </header>
-            <div className='max-md:w-full max-md:h-96 w-4/12 flex justify-center items-center'>
+            <div className='max-md:hidden max-md:h-96 w-4/12 flex justify-center items-center'>
             <Model/>
             </div>
         </div>

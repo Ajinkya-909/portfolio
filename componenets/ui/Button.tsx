@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React from 'react'
 
 const Button = ({text,className,id}:{text:string,className:string,id:string}) => {
@@ -24,7 +25,7 @@ const Button = ({text,className,id}:{text:string,className:string,id:string}) =>
             <div className='bg-circle'/>
             <p className='text'>{text}</p>
             <div className="arrow-wrapper">
-                <img src="/images/arrow-down.svg" alt="arrow" />
+                <Image src="/images/arrow-down.svg" width={10} height={10} alt="arrow" />
             </div>
         </div>
     </a>

@@ -9,26 +9,33 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Skills() {
   const skillsRef = useRef(null)
+  const isMobile = () => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth <= 768;
+  };
+  if (!isMobile) {
+    
+    useEffect(() => {
+      if (skillsRef.current) {
+        gsap.fromTo(
+          skillsRef.current,
+          { opacity: 0, y: 50 }, 
+          {
+            opacity: 1,
+            y: 0, 
+            duration: 1, 
+            delay: 0.5,
+            scrollTrigger: {
+              trigger: skillsRef.current,
+              start: 'top bottom-=100', 
+              once: true,
+            },
+          }
+        )
+      }
+    }, []) 
+  }
 
-  useEffect(() => {
-    if (skillsRef.current) {
-      gsap.fromTo(
-        skillsRef.current,
-        { opacity: 0, y: 50 }, 
-        {
-          opacity: 1,
-          y: 0, 
-          duration: 1, 
-          delay: 0.5,
-          scrollTrigger: {
-            trigger: skillsRef.current,
-            start: 'top bottom-=100', 
-            once: true,
-          },
-        }
-      )
-    }
-  }, []) 
 
   return (
     <section className='md:mt-30 flex flex-col justify-center items-center' id="skills" >

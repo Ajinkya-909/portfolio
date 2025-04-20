@@ -1,6 +1,7 @@
 "use client"
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Image from "next/image";
 
 const Contact = () => {
   const formRef:any = useRef(null);
@@ -98,7 +99,7 @@ const Contact = () => {
                       {loading ? "Sending..." : "Send Message"}
                     </p>
                     <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
+                      <img loading='lazy' src="/images/arrow-down.svg" alt="arrow" />
                     </div>
                   </div>
                 </button>

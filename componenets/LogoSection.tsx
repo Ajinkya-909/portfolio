@@ -1,11 +1,12 @@
 import {  logos } from '@/constants'
+import Image from 'next/image'
 import React from 'react'
 
 function LogoSection() {
   const LogoIcon = ({icon}:{icon:string})=>{
     return(
       <div className="flex justify-center items-center maquee-item aspect-square bg-cover" >
-        <img src={icon} alt="logos" style={{ width: 'auto', height: '13rem' }} />
+        <img loading='lazy' src={icon} alt="logos" className='md:w-auto md:h-52 h-[50rem]' />
       </div>
     )
   }
