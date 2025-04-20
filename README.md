@@ -18,13 +18,13 @@ This is my personal portfolio website, showcasing my skills, projects, and web d
 
 ## Live Demo
 
-Check it out live: [Your Live Portfolio Link](https://your-portfolio-link.com)
+Check it out live: [Your Live Portfolio Link](https://portfolio-chi-two-55.vercel.app/)
 
 ## Installation
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/portfolio.git
+    git clone https://github.com/Ajinkya-909/portfolio.git
     ```
 2. Navigate into the project folder:
     ```bash
@@ -41,8 +41,8 @@ Check it out live: [Your Live Portfolio Link](https://your-portfolio-link.com)
 
 ## Contact
 
-- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/your-username)
-- **Email:** ajinkyadeshmukh8686gmail.com
+- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/ajinkya8686/)
+- **Email:** ajinkyadeshmukh8686@gmail.com
 
 ---
 
