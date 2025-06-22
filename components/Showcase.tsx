@@ -4,7 +4,6 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import Image from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -64,28 +63,38 @@ function Showcase() {
           {/* LEFT */}
           <div className="first-project-wrapper" ref={project1Ref}>
             <div className="image-wrapper">
-              <img loading='lazy' src="/images/project1.png" alt="royalestates" />
+              <img loading='lazy' src="/images/project1.webp" alt="royalestates" />
             </div>
             <div className="text-content">
-              <h2 className="">Podcaster</h2>
-              <p className="text-white-50 md:text-xl"> A podcast streaming and management platform built with Next.js. It allows users to listen to podcasts, manage their subscriptions, and explore different podcast series with a clean, modern interface.</p>
+              <div className='flex justify-around items-center p-2 gap-2 '>
+              <h2 className='font-bold'>Promptly</h2>
+              <a className='text-cyan-600' href="https://promptly-ai-4u.vercel.app/" target='_blank'>Project Link</a>
+              </div>
+              <p className="text-white-50 md:text-xl">An AI-powered content generation tool that helps users instantly create social media posts, captions, and marketing content from custom prompts.</p>
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={project2Ref}>
-              <div className='image-wrapper bg-[#ffefdb]'>
-                <img loading='lazy' src="/images/project2.png" alt="CHITCHAT" />
+            <div className="project " ref={project2Ref}>
+              <div className='aspect-square w-4/5 relative mx-auto'>
+                <img loading='lazy' src="/images/project2.webp" alt="CHITCHAT" />
               </div>
-              <h2>Royl Estates</h2>
+              <div className='flex justify-around items-baseline p-2 gap-2 '>
+              <h2 className='font-semibold'>Podcaster</h2>
+              <a className='text-cyan-600' href="https://poadcaster.vercel.app/" target='_blank'>Project Link</a>
+              </div>
             </div>
 
-            <div className="project" ref={project3Ref}>
-              <div className='image-wrapper bg-[#ffefdb]'>
-                <img loading='lazy' src="/images/project3.jpeg" alt="CHITCHAT" />
+            <div className="flex flex-col justify-around items-center w-full gap-4" ref={project3Ref}>
+              <div className='w-full  flex justify-around items-baseline p-2 gap-2 rounded-lg border-2 border-b-indigo-300'>
+              <p className='text-xl font-semibold'>💭 Chit Chat App</p>
+              <a className='text-cyan-600' href="https://chit-chat-app-l7os.onrender.com/login" target='_blank'>Project Link</a>
               </div>
-              <h2>Chit Chat App</h2>
+              <div className='w-full  flex justify-around items-baseline p-2 gap-2 rounded-lg border-2 border-b-indigo-300'>
+              <p className='text-xl font-semibold'>🏰 Royal Estates</p>
+              <a className='text-cyan-600' href="https://real-estate-app-project.onrender.com/" target='_blank'>Project Link</a>
+              </div>
             </div>
           </div>
         </div>

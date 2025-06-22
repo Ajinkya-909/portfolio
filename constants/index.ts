@@ -82,7 +82,7 @@ const logos = [
   "/logos/nodejs.svg",
   "/logos/mongodb.svg",
   "/logos/canva.svg",
-  "/logos/clerk.svg",
+  // "/logos/clerk.svg",
   "/logos/daisyui.svg",
   "/logos/figma.svg",
   "/logos/jwt.svg",
