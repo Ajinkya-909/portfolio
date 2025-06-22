@@ -18,40 +18,38 @@ function Showcase() {
     return window.innerWidth <= 768;
   };
   
-  if (!isMobile) {
-    useGSAP(() => {
-      const projects = [project1Ref.current, project2Ref.current, project3Ref.current]
-  
-      projects.forEach((card, index) => {
-        if (card) {
-          gsap.fromTo(
-            card,
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1,
-              delay: 0.2 * (index + 1),
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom-=100',
-              },
-            }
-          )
-        }
-      })
-  
-      if (sectionRef.current) {
-        gsap.fromTo(
-          sectionRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 1.5 }
-        )
-      }
-    }, [])
-    
-  }
+  useGSAP(() => {
+  if (!isMobile()) {
+    const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
 
+    projects.forEach((card, index) => {
+      if (card) {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: 0.2 * (index + 1),
+            scrollTrigger: {
+              trigger: card,
+              start: 'top bottom-=100',
+            },
+          }
+        );
+      }
+    });
+
+    if (sectionRef.current) {
+      gsap.fromTo(
+        sectionRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1.5 }
+      );
+    }
+  }
+}, []);
 
   return (
     <section id='work' ref={sectionRef} className='app-showcase'>
