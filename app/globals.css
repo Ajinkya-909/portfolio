@@ -484,26 +484,39 @@ section {
 /* MY ANIMATIONS */
 
 .hero-text h1 {
-  opacity: 0;
+  /* Fix LCP: don't hide completely */
+  opacity: 0.01;
   transform: translateY(50px);
   animation: fadeInUp 1s ease-in-out forwards;
 }
 
 .hero-text h1:nth-child(1) {
+  /* No delay for main heading (fix LCP) */
   animation-delay: 0s;
 }
 
 .hero-text h1:nth-child(2) {
-  animation-delay: 0.2s;
+  /* Keep light stagger effect */
+  animation-delay: 0.1s;
 }
 
 .hero-text h1:nth-child(3) {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
+/* Animation keyframes */
 @keyframes fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Accessibility + Lighthouse trick */
+@media (prefers-reduced-motion: reduce) {
+  .hero-text h1 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
