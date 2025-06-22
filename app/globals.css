@@ -165,7 +165,7 @@ section {
       @apply h-full flex flex-col justify-around xl:w-[65%];
 
       .image-wrapper {
-        @apply xl:h-[65vh] md:h-[45vh] h-96 relative;
+        @apply xl:h-[65vh] md:h-[45vh] h-[20vh] relative;
 
         img {
           @apply w-full object-cover rounded-xl absolute inset-0;
