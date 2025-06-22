@@ -50,8 +50,8 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <h2>and Creating</h2>
-              <h2>Real World Projects</h2>
+              <h1>and Creating</h1>
+              <h1>Real World Projects</h1>
             </div>
 
             <p className="text-white-50 relative md:text-xl z-10">

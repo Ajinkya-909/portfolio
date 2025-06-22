@@ -487,7 +487,7 @@ section {
   /* Fix LCP: don't hide completely */
   opacity: 0.01;
   transform: translateY(50px);
-  animation: fadeInUp 1s ease-in-out forwards;
+  animation: fadeInUp 2s ease-in-out forwards;
 }
 
 .hero-text h1:nth-child(1) {
@@ -509,14 +509,5 @@ section {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* Accessibility + Lighthouse trick */
-@media (prefers-reduced-motion: reduce) {
-  .hero-text h1 {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
   }
 }
