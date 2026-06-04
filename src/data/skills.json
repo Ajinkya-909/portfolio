@@ -1,0 +1,57 @@
+{
+  "languages": {
+    "name": "Languages",
+    "items": [
+      { "name": "C", "icon": "" },
+      { "name": "C++", "icon": "/logos/c-plusplus.svg" },
+      { "name": "Python", "icon": "" },
+      { "name": "JavaScript", "icon": "/logos/javascript.svg" },
+      { "name": "TypeScript", "icon": "/logos/typescript.svg" },
+      { "name": "Dart", "icon": "" }
+    ]
+  },
+  "frontend": {
+    "name": "Frontend",
+    "items": [
+      { "name": "React", "icon": "/logos/reactjs.svg" },
+      { "name": "Next.js", "icon": "/logos/nextjs.svg" },
+      { "name": "TailwindCSS", "icon": "/logos/tailwindcss.svg" }
+    ]
+  },
+  "backend": {
+    "name": "Backend",
+    "items": [
+      { "name": "Node.js", "icon": "/logos/nodejs.svg" },
+      { "name": "Express.js", "icon": "/logos/expressjs.svg" },
+      { "name": "REST APIs", "icon": "" },
+      { "name": "Socket.IO", "icon": "/logos/socketio.svg" }
+    ]
+  },
+  "databases": {
+    "name": "Databases",
+    "items": [
+      { "name": "PostgreSQL", "icon": "" },
+      { "name": "MongoDB", "icon": "/logos/mongodb.svg" },
+      { "name": "MySQL", "icon": "" }
+    ]
+  },
+  "tools": {
+    "name": "Infrastructure & Tools",
+    "items": [
+      { "name": "Docker", "icon": "" },
+      { "name": "Git", "icon": "" },
+      { "name": "Linux", "icon": "" },
+      { "name": "Redis", "icon": "" },
+      { "name": "BullMQ", "icon": "" }
+    ]
+  },
+  "learning": {
+    "name": "Currently Learning",
+    "items": [
+      { "name": "AWS", "icon": "" },
+      { "name": "System Design", "icon": "" },
+      { "name": "Flutter", "icon": "" },
+      { "name": "Spring Boot", "icon": "" }
+    ]
+  }
+}

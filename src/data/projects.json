@@ -1,0 +1,79 @@
+[
+  {
+    "id": "sentinelx",
+    "name": "SentinelX",
+    "description": "An enterprise-grade, asynchronous log pipeline engineered to ingest, normalize, and audit logs. Detect threats concurrently across 5 analytic engines backed by machine learning models and AI.",
+    "techStack": ["Node.js", "Express", "PostgreSQL", "Prisma", "BullMQ", "Redis", "Machine Learning"],
+    "features": [
+      "Processes logs up to 300 MB safely using custom file streams",
+      "Tiered log-type penalties for greedy fallbacks out of 13 supported types",
+      "Unsupervised Isolation Forest automatically flags outliers",
+      "Deterministic GeoIP routing and AI-driven recommendations"
+    ],
+    "image": "/images/project1.webp",
+    "github": "https://github.com/Ajinkya-909/SentinelX",
+    "live": "",
+    "docs": "#",
+    "isFlagship": true
+  },
+  {
+    "id": "chitchat",
+    "name": "ChitChat",
+    "description": "A real-time scalable chat application for communities and teams.",
+    "techStack": ["React", "Node.js", "Socket.IO", "MongoDB"],
+    "features": [
+      "Real-time bidirectional communication",
+      "Authentication and User Management",
+      "Optimized message delivery and read receipts"
+    ],
+    "image": "/images/project2.webp",
+    "github": "https://github.com/Ajinkya-909/ChitChat",
+    "live": "https://chitchat-demo.com",
+    "isFlagship": false
+  },
+  {
+    "id": "podcaster",
+    "name": "Podcaster",
+    "description": "An AI-powered podcast generation and streaming platform.",
+    "techStack": ["Next.js", "Convex", "Clerk", "OpenAI"],
+    "features": [
+      "Text-to-speech AI podcast generation",
+      "Secure user authentication",
+      "Real-time database updates"
+    ],
+    "image": "/images/project1.webp",
+    "github": "https://github.com/Ajinkya-909/Podcaster",
+    "live": "https://podcaster.com",
+    "isFlagship": false
+  },
+  {
+    "id": "promptly",
+    "name": "Promptly",
+    "description": "An open-source AI prompting tool to discover, create and share creative prompts.",
+    "techStack": ["React", "Tailwind CSS", "Next.js"],
+    "features": [
+      "Shareable prompts with tags",
+      "Copy-to-clipboard functionality",
+      "User profiles and saved prompts"
+    ],
+    "image": "/images/project2.webp",
+    "github": "https://github.com/Ajinkya-909/Promptly",
+    "live": "",
+    "isFlagship": false
+  },
+  {
+    "id": "royal-estate",
+    "name": "Royal Estate",
+    "description": "A real estate property listing platform with advanced search and filtering.",
+    "techStack": ["MERN Stack", "JWT", "Redux"],
+    "features": [
+      "Advanced property search and filter",
+      "Image uploads and processing",
+      "Contact landlords directly"
+    ],
+    "image": "/images/project1.webp",
+    "github": "https://github.com/Ajinkya-909/RoyalEstate",
+    "live": "https://royal-estate.demo",
+    "isFlagship": false
+  }
+]

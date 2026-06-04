@@ -1,0 +1,32 @@
+[
+  {
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "date": "2025",
+    "link": "#"
+  },
+  {
+    "name": "Responsive Web Design",
+    "issuer": "freeCodeCamp",
+    "date": "2024",
+    "link": "#"
+  },
+  {
+    "name": "Google Cloud Digital Leader",
+    "issuer": "Google Cloud",
+    "date": "2025",
+    "link": "#"
+  },
+  {
+    "name": "System Design Foundations",
+    "issuer": "Educative",
+    "date": "2025",
+    "link": "#"
+  },
+  {
+    "name": "Meta Back-End Developer",
+    "issuer": "Coursera",
+    "date": "2025",
+    "link": "#"
+  }
+]

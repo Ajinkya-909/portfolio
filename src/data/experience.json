@@ -1,0 +1,15 @@
+[
+  {
+    "role": "Senior Developer Intern",
+    "company": "Blessin Care Essentials Pvt Ltd",
+    "duration": "June 2025 - December 2025",
+    "description": "Leading the development of internal tools and educational platforms.",
+    "projects": ["MyCampusMate", "Finance Dashboard", "Living Hub"],
+    "technologies": ["Next.js", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    "keyContributions": [
+      "Engineered scalable data ingestion pipelines and processing architectures.",
+      "Designed full-stack systems with responsive front-end dashboards.",
+      "Optimized query performance reducing load times by 40%."
+    ]
+  }
+]
