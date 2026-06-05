@@ -11,10 +11,26 @@
       "Deterministic GeoIP routing and AI-driven recommendations"
     ],
     "image": "/images/project1.webp",
+    "smartphoneImage": "",
     "github": "https://github.com/Ajinkya-909/SentinelX",
     "live": "",
     "docs": "#",
     "isFlagship": true
+  },
+  {
+    "id": "chitchat",
+    "name": "ChitChat",
+    "description": "A real-time scalable chat application for communities and teams.",
+    "techStack": ["React", "Node.js", "Socket.IO", "MongoDB"],
+    "features": [
+      "Real-time bidirectional communication",
+      "Authentication and User Management",
+      "Optimized message delivery and read receipts"
+    ],
+    "image": "/images/project2.webp",
+    "github": "https://github.com/Ajinkya-909/ChitChat",
+    "live": "https://chitchat-demo.com",
+    "isFlagship": false
   },
   {
     "id": "chitchat",
@@ -72,8 +88,9 @@
       "Contact landlords directly"
     ],
     "image": "/images/project1.webp",
+    "smartphoneImage": "",
     "github": "https://github.com/Ajinkya-909/RoyalEstate",
     "live": "https://royal-estate.demo",
-    "isFlagship": false
+    "isFlagship": true
   }
 ]

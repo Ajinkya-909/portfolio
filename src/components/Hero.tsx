@@ -1,4 +1,5 @@
-import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import DeveloperTerminal from "./DeveloperTerminal";
 
 const HERO_WORDS = [
   { text: "Ideas", imgPath: "/images/ideas.svg" },
@@ -13,28 +14,24 @@ const HERO_WORDS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+    <section className="relative min-h-screen pt-24 pb-20 flex items-center overflow-hidden">
       {/* Decorative Grid & Blur */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0c0c0e_1px,transparent_1px),linear-gradient(to_bottom,#0c0c0e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_20%,#000_70%,transparent_100%)] pointer-events-none z-0" />
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-50/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white-50/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-10 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="max-w-7xl xl:max-w-[90%] 2xl:max-w-[85%] mx-auto px-6 md:px-16 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
         
         {/* Left Side: Content */}
         <div className="space-y-8 flex flex-col justify-center">
-          
-          <div className="flex gap-2 text-xs font-semibold uppercase tracking-widest text-blue-50">
-             <span className="text-white">Hello, I'm</span> Ajinkya Deshmukh
-          </div>
 
-          <div className="hero-text text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+          <div className="hero-text text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight gap-3 md:gap-4">
             <h1>
               Innovating{" "}
               <span className="slide">
                 <span className="wrapper">
                   {HERO_WORDS.map((word, index) => (
-                    <span key={index} className="flex items-center gap-2 md:gap-3">
+                    <span key={index} className="flex items-center gap-2 md:gap-3 h-[48px] md:h-[78px]">
                       <img
                         src={word.imgPath}
                         alt={word.text}
@@ -46,8 +43,8 @@ export default function Hero() {
                 </span>
               </span>
             </h1>
-            <h1 className="mt-2 text-white-50">and Creating</h1>
-            <h1 className="mt-2 text-blue-50">Real World Projects</h1>
+            <h1 className="text-white-50">and Creating</h1>
+            <h1 className="text-blue-50">Real World Projects</h1>
           </div>
 
           <p className="text-blue-50 max-w-xl text-base sm:text-lg leading-relaxed">
@@ -76,13 +73,9 @@ export default function Hero() {
 
         </div>
 
-        {/* Right Side: Free Space / Minimal Graphics */}
+        {/* Right Side: Interactive Developer Console */}
         <div className="hidden lg:flex items-center justify-center relative">
-           <div className="w-[80%] h-[80%] rounded-3xl border border-white/5 bg-black-100/30 backdrop-blur-sm relative overflow-hidden flex items-center justify-center shadow-2xl">
-              <div className="absolute inset-0 cyber-grid opacity-30" />
-              <div className="w-32 h-32 bg-white-50/10 rounded-full blur-[40px] animate-pulse" />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent" />
-           </div>
+          <DeveloperTerminal />
         </div>
       </div>
     </section>

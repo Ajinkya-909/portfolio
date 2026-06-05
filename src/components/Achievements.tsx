@@ -1,6 +1,5 @@
 import achievementsData from "../data/achievements.json";
-import certificationsData from "../data/certifications.json";
-import { GraduationCap, Trophy, Code2, Briefcase, Award, ExternalLink } from "lucide-react";
+import { GraduationCap, Trophy, Code2, Briefcase, Award } from "lucide-react";
 
 export default function Achievements() {
   const getIcon = (iconName: string) => {
@@ -77,32 +76,6 @@ export default function Achievements() {
 
         </div>
       </div>
-
-      {/* Certifications Infinite Marquee */}
-      <div className="py-10 bg-black-100/50 border-y border-black-50 relative flex overflow-x-hidden group/marquee">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
-        
-        <div className="marquee-box animate-[marquee_40s_linear_infinite] group-hover/marquee:[animation-play-state:paused] flex gap-6 px-3">
-          {[...certificationsData, ...certificationsData].map((cert, idx) => (
-            <div key={idx} className="marquee-item flex-none w-80 bg-black-200 border border-black-50 rounded-xl p-5 hover:border-white-50/30 transition-all cursor-pointer group">
-              <div className="flex justify-between items-start gap-4">
-                <div className="space-y-1">
-                  <h4 className="font-bold text-white text-sm line-clamp-1">{cert.name}</h4>
-                  <p className="text-xs text-blue-50">{cert.issuer}</p>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-black-100 border border-black-50 flex items-center justify-center shrink-0 group-hover:bg-white-50 group-hover:text-black transition-colors">
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </div>
-              </div>
-              <div className="mt-4 text-[10px] font-mono text-blue-50/50 uppercase tracking-widest">
-                Issued {cert.date}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
     </section>
   );
 }
