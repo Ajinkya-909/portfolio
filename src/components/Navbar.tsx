@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className={`navbar ${isScrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner max-w-[1400px] w-full mx-auto flex items-center justify-between">
         {/* Left Side: Name */}
-        <a href="#" className="text-xl md:text-2xl font-bold tracking-widest uppercase hover:text-white-50 transition-colors">
+        <a href="#" className="text-lg md:text-2xl font-bold tracking-widest uppercase hover:text-white-50 transition-colors">
           Ajinkya Deshmukh
         </a>
 

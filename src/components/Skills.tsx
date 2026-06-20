@@ -9,9 +9,9 @@ export default function Skills() {
   const categories = Object.keys(skillsData) as CategoryKey[];
 
   return (
-    <section id="skills" className="py-20 max-w-[1400px] mx-auto px-6 md:px-12">
+    <section id="skills" className="py-12 sm:py-20 max-w-[1400px] mx-auto px-6 md:px-12">
       <div className="text-center mb-12 space-y-4">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+        <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white">
           Technical Arsenal
         </h2>
         <p className="text-blue-50 max-w-xl mx-auto">

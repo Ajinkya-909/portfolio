@@ -3,9 +3,9 @@ import { Briefcase, Calendar } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 max-w-[1400px] mx-auto px-6 md:px-12">
+    <section id="experience" className="py-12 sm:py-20 max-w-[1400px] mx-auto px-6 md:px-12">
       <div className="text-center mb-16 space-y-4">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+        <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white">
           Professional Experience
         </h2>
       </div>

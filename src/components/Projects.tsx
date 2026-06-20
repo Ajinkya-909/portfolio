@@ -219,7 +219,7 @@ export default function Projects() {
   const otherProjects = projectsData.filter((p) => !p.isFlagship);
 
   return (
-    <section id="work" className="py-20 max-w-[1400px] mx-auto px-6 md:px-12 space-y-24">
+    <section id="work" className="py-12 sm:py-20 max-w-[1400px] mx-auto px-6 md:px-12 space-y-16 sm:space-y-24">
       
       {/* Flagship Projects Section */}
       <div>
@@ -228,7 +228,7 @@ export default function Projects() {
             <Sparkles className="w-4 h-4" />
             FEATURED WORK
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white">
             Featured Projects
           </h2>
         </div>

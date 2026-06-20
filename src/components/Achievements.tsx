@@ -15,10 +15,10 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-20 max-w-[1400px] mx-auto overflow-hidden">
+    <section id="achievements" className="py-12 sm:py-20 max-w-[1400px] mx-auto overflow-hidden">
       
       <div className="text-center mb-16 space-y-4 px-5">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+        <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white">
           Academics & Achievements
         </h2>
         <p className="text-blue-50 max-w-xl mx-auto">

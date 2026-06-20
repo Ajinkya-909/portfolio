@@ -33,21 +33,6 @@
     "isFlagship": false
   },
   {
-    "id": "chitchat",
-    "name": "ChitChat",
-    "description": "A real-time scalable chat application for communities and teams.",
-    "techStack": ["React", "Node.js", "Socket.IO", "MongoDB"],
-    "features": [
-      "Real-time bidirectional communication",
-      "Authentication and User Management",
-      "Optimized message delivery and read receipts"
-    ],
-    "image": "/images/project2.webp",
-    "github": "https://github.com/Ajinkya-909/ChitChat",
-    "live": "https://chitchat-demo.com",
-    "isFlagship": false
-  },
-  {
     "id": "podcaster",
     "name": "Podcaster",
     "description": "An AI-powered podcast generation and streaming platform.",
