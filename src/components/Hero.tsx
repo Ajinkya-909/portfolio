@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
         
         {/* Left Side: Content */}
-        <div className="space-y-8 flex flex-col justify-center">
+        <div className="space-y-8 flex flex-col justify-center relative z-20">
 
           <div className="hero-text text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight gap-3 md:gap-4">
             <h1>
@@ -31,7 +31,7 @@ export default function Hero() {
               <span className="slide">
                 <span className="wrapper">
                   {HERO_WORDS.map((word, index) => (
-                    <span key={index} className="flex items-center gap-2 md:gap-3 h-[48px] md:h-[78px]">
+                    <span key={index} className="flex items-center gap-2 md:gap-3 h-[48px] md:h-[78px] whitespace-nowrap">
                       <img
                         src={word.imgPath}
                         alt={word.text}
