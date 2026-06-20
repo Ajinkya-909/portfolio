@@ -15,7 +15,7 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-20 max-w-7xl mx-auto overflow-hidden">
+    <section id="achievements" className="py-20 max-w-[1400px] mx-auto overflow-hidden">
       
       <div className="text-center mb-16 space-y-4 px-5">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
@@ -27,7 +27,7 @@ export default function Achievements() {
       </div>
 
       {/* Masonry Layout for Academics and Milestones */}
-      <div className="px-5 md:px-10 mb-20">
+      <div className="px-6 md:px-12 mb-20">
         {/* We use CSS columns for a true masonry effect */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           

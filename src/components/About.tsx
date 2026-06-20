@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 max-w-7xl mx-auto px-5 md:px-10">
+    <section id="about" className="py-20 max-w-[1400px] mx-auto px-6 md:px-12">
       <div className="card-border rounded-2xl p-8 md:p-12 relative overflow-hidden bg-black-100">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/5 rounded-full blur-[80px]" />
         

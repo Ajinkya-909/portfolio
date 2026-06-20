@@ -219,7 +219,7 @@ export default function Projects() {
   const otherProjects = projectsData.filter((p) => !p.isFlagship);
 
   return (
-    <section id="work" className="py-20 max-w-7xl mx-auto px-5 md:px-10 space-y-24">
+    <section id="work" className="py-20 max-w-[1400px] mx-auto px-6 md:px-12 space-y-24">
       
       {/* Flagship Projects Section */}
       <div>

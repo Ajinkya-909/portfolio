@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles } from "lucide-react";
-import DeveloperTerminal from "./DeveloperTerminal";
+import SplineModel from "./SplineModel";
 
 const HERO_WORDS = [
   { text: "Ideas", imgPath: "/images/ideas.svg" },
@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-50/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white-50/5 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl xl:max-w-[90%] 2xl:max-w-[85%] mx-auto px-6 md:px-16 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
         
         {/* Left Side: Content */}
         <div className="space-y-8 flex flex-col justify-center">
@@ -73,9 +73,9 @@ export default function Hero() {
 
         </div>
 
-        {/* Right Side: Interactive Developer Console */}
-        <div className="hidden lg:flex items-center justify-center relative">
-          <DeveloperTerminal />
+        {/* Right Side: Spline 3D Model (Desktop Only) */}
+        <div className="hidden lg:flex items-center justify-center relative w-full">
+          <SplineModel />
         </div>
       </div>
     </section>

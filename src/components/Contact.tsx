@@ -26,7 +26,7 @@ export default function Contact() {
     <footer id="contact" className="border-t border-black-50 bg-black-100/30 relative overflow-hidden mt-20">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white-50/5 rounded-full blur-[120px] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-16 md:py-20 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0 items-center justify-between">
           
           {/* Left / Center Info */}
