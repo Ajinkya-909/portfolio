@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import projectsData from "../data/projects.json";
-import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ExternalLink, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
