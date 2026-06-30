@@ -10,26 +10,74 @@
       "Unsupervised Isolation Forest automatically flags outliers",
       "Deterministic GeoIP routing and AI-driven recommendations"
     ],
-    "image": "/images/project1.webp",
-    "smartphoneImage": "",
+    "image": "/project images/sentinelx-desktop.webp",
+    "smartphoneImage": "/project images/sentinelx-mobile.webp",
     "github": "https://github.com/Ajinkya-909/SentinelX",
     "live": "",
     "docs": "#",
     "isFlagship": true
   },
   {
-    "id": "chitchat",
-    "name": "ChitChat",
-    "description": "A real-time scalable chat application for communities and teams.",
-    "techStack": ["React", "Node.js", "Socket.IO", "MongoDB"],
+    "id": "expenzo",
+    "name": "Expenzo",
+    "description": "A comprehensive personal finance and budget tracking application with rich analytics.",
+    "techStack": ["React", "Node.js", "Express", "MongoDB", "Chart.js", "Tailwind CSS"],
     "features": [
-      "Real-time bidirectional communication",
-      "Authentication and User Management",
-      "Optimized message delivery and read receipts"
+      "Interactive dashboard visualizing monthly and yearly expenses with Chart.js",
+      "Budget limit monitoring and dynamic alert notifications",
+      "Secure user authentication with JWT and password encryption",
+      "Filtering, search, and categorization of transaction records"
     ],
-    "image": "/images/project2.webp",
-    "github": "https://github.com/Ajinkya-909/ChitChat",
-    "live": "https://chitchat-demo.com",
+    "image": "/project images/expenzo-desktop.webp",
+    "smartphoneImage": "/project images/expenzo-mobile.webp",
+    "github": "https://github.com/Ajinkya-909/Expenzo",
+    "live": "",
+    "isFlagship": true
+  },
+  {
+    "id": "campusmatemate",
+    "name": "CampusMateMate",
+    "description": "A collaborative platform designed to streamline student resource sharing and communication on campus.",
+    "techStack": ["Next.js", "React", "Firebase", "Tailwind CSS", "Socket.IO"],
+    "features": [
+      "Peer-to-peer textbook and study resource exchange marketplace",
+      "Real-time chat channels for projects, study groups, and campus events",
+      "Interactive events feed and exam schedule tracker"
+    ],
+    "image": "/project images/campusmatemate-desktop.webp",
+    "smartphoneImage": "/project images/campusmatemate-mobile.webp",
+    "github": "https://github.com/Ajinkya-909/CampusMateMate",
+    "live": "",
+    "isFlagship": true
+  },
+  {
+    "id": "jobsync",
+    "name": "JobSync",
+    "description": "An intuitive job search aggregator and application tracking system built for modern job seekers.",
+    "techStack": ["React", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
+    "features": [
+      "Centralized job search database aggregating listings from multiple platforms",
+      "Kanban tracking board to organize stages from Applied to Interviewing and Offers",
+      "Automated deadline notifications and notes logging for interview prep"
+    ],
+    "image": "/project images/jobsync.webp",
+    "github": "https://github.com/Ajinkya-909/JobSync",
+    "live": "",
+    "isFlagship": false
+  },
+  {
+    "id": "pishlense",
+    "name": "PhishLense",
+    "description": "A cybersecurity analytics platform and detector identifying phishing attempts and malicious URLs.",
+    "techStack": ["Python", "FastAPI", "React", "Machine Learning", "Tailwind CSS"],
+    "features": [
+      "Machine learning models evaluating URL heuristics and metadata",
+      "Real-time warning system with detailed threat indicator scores",
+      "Historical logs and visual charts summarizing scanning statistics"
+    ],
+    "image": "/project images/pishlense.webp",
+    "github": "https://github.com/Ajinkya-909/PishLense",
+    "live": "",
     "isFlagship": false
   },
   {
@@ -38,44 +86,28 @@
     "description": "An AI-powered podcast generation and streaming platform.",
     "techStack": ["Next.js", "Convex", "Clerk", "OpenAI"],
     "features": [
-      "Text-to-speech AI podcast generation",
-      "Secure user authentication",
-      "Real-time database updates"
+      "Text-to-speech AI podcast generation and custom audio generation",
+      "Secure user authentication and workspace organization",
+      "Real-time database updates and premium streaming interface"
     ],
-    "image": "/images/project1.webp",
+    "image": "/project images/poadcaster.webp",
     "github": "https://github.com/Ajinkya-909/Podcaster",
-    "live": "https://podcaster.com",
+    "live": "",
     "isFlagship": false
   },
   {
     "id": "promptly",
     "name": "Promptly",
-    "description": "An open-source AI prompting tool to discover, create and share creative prompts.",
-    "techStack": ["React", "Tailwind CSS", "Next.js"],
+    "description": "An open-source AI prompting tool to discover, create, and share creative prompts.",
+    "techStack": ["React", "Next.js", "Tailwind CSS", "MongoDB"],
     "features": [
-      "Shareable prompts with tags",
-      "Copy-to-clipboard functionality",
-      "User profiles and saved prompts"
+      "Social sharing framework for prompts with searchable category tags",
+      "One-click copy-to-clipboard and responsive search controls",
+      "User profiles saving user-specific prompts and curated favorites"
     ],
-    "image": "/images/project2.webp",
+    "image": "/project images/promptly.webp",
     "github": "https://github.com/Ajinkya-909/Promptly",
     "live": "",
     "isFlagship": false
-  },
-  {
-    "id": "royal-estate",
-    "name": "Royal Estate",
-    "description": "A real estate property listing platform with advanced search and filtering.",
-    "techStack": ["MERN Stack", "JWT", "Redux"],
-    "features": [
-      "Advanced property search and filter",
-      "Image uploads and processing",
-      "Contact landlords directly"
-    ],
-    "image": "/images/project1.webp",
-    "smartphoneImage": "",
-    "github": "https://github.com/Ajinkya-909/RoyalEstate",
-    "live": "https://royal-estate.demo",
-    "isFlagship": true
   }
 ]

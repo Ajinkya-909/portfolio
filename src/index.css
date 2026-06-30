@@ -518,6 +518,7 @@ section {
 }
 .preserve-3d {
   transform-style: preserve-3d;
+  will-change: transform;
 }
 .backface-hidden {
   backface-visibility: hidden;

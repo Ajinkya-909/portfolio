@@ -26,181 +26,252 @@ function ProjectCard({ project }: { project: Project }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="w-full h-[520px] lg:h-[480px] perspective-1000">
-      <div 
-        className={`relative w-full h-full transition-transform duration-700 preserve-3d ${
-          isFlipped ? "rotate-y-180" : ""
-        }`}
-      >
-        {/* FRONT FACE */}
-        <div className={`absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden card-border bg-black-100 flex flex-col justify-end ${
-          isFlipped ? "pointer-events-none z-0" : "pointer-events-auto z-10"
-        }`}>
-          {/* Background Image Container */}
-          <div className="absolute inset-0 z-0 flex items-center justify-center bg-black-100">
-            {/* Mobile background view (hidden on desktop) */}
-            <div className="absolute inset-0 w-full h-full lg:hidden flex items-center justify-center">
-              {project.smartphoneImage ? (
-                // If smartphone image exists, show it full-bleed
-                <img 
-                  src={project.smartphoneImage} 
-                  alt={project.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-102" 
-                />
-              ) : (
-                // Fallback: contained landscape image with blurred background
-                <>
-                  <img 
-                    src={project.image} 
-                    alt="" 
-                    className="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none" 
-                  />
-                  <img 
-                    src={project.image} 
-                    alt={project.name} 
-                    className="w-full h-full object-contain relative z-10 transition-transform duration-700 hover:scale-102" 
-                  />
-                </>
-              )}
+    <>
+      {/* Desktop Layout: Side-by-Side (Unchanged) */}
+      <div className="hidden lg:flex w-full lg:h-[520px] rounded-2xl overflow-hidden card-border bg-black-100 flex-row relative">
+        {/* Left Column: Project Details */}
+        <div className="w-[45%] p-12 flex flex-col justify-between z-10 bg-black-100 border-r border-white/5">
+          {/* Stationary Header */}
+          <div>
+            <div className="text-[10px] font-mono font-bold tracking-widest text-blue-50/60 uppercase mb-1 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-white-50 animate-pulse" />
+              Flagship Project
             </div>
-
-            {/* Desktop background view (hidden on mobile) */}
-            <div className="absolute inset-0 w-full h-full hidden lg:block">
-              <img 
-                src={project.image} 
-                alt={project.name} 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-102" 
-              />
-            </div>
-
-            {/* Dark gradient overlay for button readability at the bottom */}
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent z-20" />
+            <h3 className="text-4xl font-extrabold text-white tracking-tight">
+              {project.name}
+            </h3>
           </div>
 
-          {/* Front Content (positioned above background) */}
-          <div className="relative z-10 p-6 md:p-10 flex flex-col justify-end h-full">
-            {/* Actions Bar */}
-            <div className="flex flex-row flex-nowrap items-center justify-between w-full gap-2 md:gap-4">
-              <div className="flex items-center gap-2 md:gap-3 shrink-0">
-                {project.live ? (
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="px-3 py-2 md:px-5 md:py-2.5 rounded-lg bg-white-50 text-black font-semibold flex items-center gap-1.5 md:gap-2 hover:scale-105 transition-all text-xs md:text-sm shadow-lg shrink-0"
-                  >
-                    View Live <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                  </a>
-                ) : (
-                  <button 
-                    disabled 
-                    className="px-3 py-2 md:px-5 md:py-2.5 rounded-lg border border-black-50 bg-black-200 text-blue-50/30 font-semibold cursor-not-allowed text-xs md:text-sm shrink-0"
-                  >
-                    Project not live
-                  </button>
-                )}
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="p-2 md:p-2.5 rounded-lg border border-white/10 bg-black/40 hover:bg-black/60 hover:border-white/20 text-white transition-colors shadow-lg shrink-0"
-                  title="View Source on GitHub"
-                >
-                  <GithubIcon className="w-4 h-4 md:w-5 md:h-5" />
-                </a>
-              </div>
-              <button 
-                onClick={() => setIsFlipped(true)}
-                className="px-3 py-2 md:px-5 md:py-2.5 rounded-lg border border-white-50/20 bg-white/10 hover:bg-white/20 text-white font-semibold flex items-center gap-1.5 md:gap-2 transition-all hover:scale-105 text-xs md:text-sm cursor-pointer shadow-lg shrink-0"
-              >
-                More Info <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              </button>
+          {/* Scrollable Content Container */}
+          <div className="flex-1 overflow-y-auto my-4 pr-2 space-y-6 custom-scrollbar">
+            <p className="text-sm text-blue-50/90 leading-relaxed max-w-xl">
+              {project.description}
+            </p>
+
+            {/* Features */}
+            <div className="space-y-2">
+              <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
+                Key Accomplishments
+              </h4>
+              <ul className="space-y-2">
+                {project.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs text-blue-50/90 leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white-50 mt-1.5 shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            {/* Tech Stack */}
+            <div className="space-y-2">
+              <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
+                Technologies Used
+              </h4>
+              <div className="flex flex-wrap gap-1.5">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-white/5 border border-white/10 text-white-50"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Stationary Action Buttons */}
+          <div className="flex items-center gap-3 pt-6 border-t border-white/10">
+            {project.live ? (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-lg bg-white-50 text-black font-semibold flex items-center gap-1.5 hover:scale-105 transition-all text-sm shadow-lg shadow-white/5 shrink-0"
+              >
+                View Live <ExternalLink className="w-4 h-4" />
+              </a>
+            ) : (
+              <span className="px-5 py-2.5 rounded-lg border border-black-50 bg-black-200 text-blue-50/30 font-semibold text-sm shrink-0">
+                Project not live
+              </span>
+            )}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2.5 rounded-lg border border-white/10 bg-black/45 hover:bg-black/65 hover:border-white/20 text-white transition-all shadow-lg hover:scale-105 shrink-0"
+              title="View Source on GitHub"
+            >
+              <GithubIcon className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
-        {/* BACK FACE */}
-        <div className={`absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden card-border bg-black-100 flex flex-col justify-between ${
-          isFlipped ? "pointer-events-auto z-10" : "pointer-events-none z-0"
-        }`}>
-          {/* Background Image (dimmed and blurred) */}
-          <div className="absolute inset-0 z-0">
-            {/* Mobile blurred bg (hidden on desktop) */}
-            <img 
-              src={project.smartphoneImage || project.image} 
-              alt="" 
-              className="absolute inset-0 w-full h-full object-cover blur-md scale-105 lg:hidden" 
+        {/* Right Column: Visual Showcase (Desktop & Mobile mockup containment) */}
+        <div className="w-[55%] relative h-full overflow-hidden bg-black-300 flex items-center justify-center p-0">
+          {/* Background Decorative Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none" />
+
+          {/* Desktop Mockup Container */}
+          <div className={`w-[95%] overflow-hidden relative transition-transform duration-500 hover:scale-[1.01] flex items-center justify-center ${project.smartphoneImage ? 'hidden lg:flex' : 'flex'}`}>
+            <img
+              src={project.image}
+              alt={`${project.name} Desktop`}
+              className="w-full h-full object-cover object-top"
             />
-            {/* Desktop blurred bg (hidden on mobile) */}
-            <img 
-              src={project.image} 
-              alt="" 
-              className="absolute inset-0 w-full h-full object-cover blur-md scale-105 hidden lg:block" 
-            />
-            {/* Very dark overlay to prioritize readability */}
-            <div className="absolute inset-0 bg-black/85" />
           </div>
 
-          {/* Back Content (positioned above background) */}
-          <div className="relative z-10 p-6 md:p-10 lg:p-12 flex flex-col h-full justify-between overflow-hidden">
-            {/* Header */}
-            <div>
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 tracking-tight">
-                {project.name}
-              </h3>
-              <p className="text-xs md:text-sm text-blue-50/90 leading-relaxed mb-4 border-b border-white/10 pb-3">
-                {project.description}
-              </p>
+          {/* Mobile Mockup */}
+          {project.smartphoneImage && (
+            <div className="absolute right-6 bottom-6 w-[125px] h-[260px] flex items-center justify-center z-20 transition-transform duration-500 hover:scale-105">
+              <img
+                src={project.smartphoneImage}
+                alt={`${project.name} Mobile`}
+                className="max-w-full max-h-full object-cover object-top rounded-[12px] border-[2.5px] border-white/20 shadow-2xl"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Mobile/Tablet Layout: Flat Toggle Card */}
+      <div className="w-full h-[550px] lg:hidden rounded-2xl overflow-hidden card-border bg-black-100 p-5 flex flex-col justify-between relative">
+        {!isFlipped ? (
+          <div className="flex flex-col justify-between h-full w-full">
+            {/* Project Title inside front card */}
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-bold text-white tracking-tight">{project.name}</h3>
+              <span className="text-[9px] font-mono uppercase tracking-wider text-blue-50/50">Featured Project</span>
             </div>
 
-            {/* Scrollable Features & Tech Stack */}
-            <div className="flex-1 overflow-y-auto pr-2 mb-6 custom-scrollbar space-y-6">
-              {/* Tech Stack */}
-              <div>
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-blue-50/70 mb-2 font-mono">
-                  Technologies
+            {/* Clickable Image Container */}
+            <div
+              onClick={() => setIsFlipped(true)}
+              className="relative flex-1 w-full bg-black-300 flex items-center justify-center overflow-hidden rounded-xl cursor-pointer group border border-white/5"
+            >
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-30">
+                <span className="text-white text-xs font-semibold bg-black/80 px-3 py-1.5 rounded-full border border-white/10">Click to view info</span>
+              </div>
+              <img
+                src={project.image}
+                alt={`${project.name} Desktop`}
+                className="max-w-[95%] max-h-[90%] object-contain rounded-lg shadow-xl"
+              />
+              {project.smartphoneImage && (
+                <div className="absolute right-3 bottom-3 w-[70px] h-[130px] flex items-center justify-center z-20">
+                  <img
+                    src={project.smartphoneImage}
+                    alt={`${project.name} Mobile`}
+                    className="max-w-full max-h-full object-contain rounded border border-white/20 shadow-xl"
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Actions Footer */}
+            <div className="mt-4 space-y-2.5">
+              <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                {project.live ? (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 py-2.5 rounded-lg bg-white-50 text-black font-bold flex items-center justify-center gap-1.5 text-xs shadow-lg shadow-white/5"
+                  >
+                    View Live <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <span className="flex-1 py-2.5 rounded-lg border border-black-50 bg-black-200 text-blue-50/30 font-semibold text-center text-xs">
+                    Project not live
+                  </span>
+                )}
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-lg border border-white/10 bg-black/45 hover:bg-black/65 text-white transition-all shadow-lg shrink-0"
+                  title="View Source on GitHub"
+                >
+                  <GithubIcon className="w-4.5 h-4.5" />
+                </a>
+              </div>
+
+              {/* View Info Trigger */}
+              <button
+                onClick={() => setIsFlipped(true)}
+                className="w-full py-2.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white-50 font-semibold text-xs uppercase tracking-wider transition-all"
+              >
+                View Info
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col justify-between h-full w-full">
+            {/* Stationary Header */}
+            <div>
+              <div className="text-[10px] font-mono font-bold tracking-widest text-blue-50/60 uppercase mb-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-white-50 animate-pulse" />
+                Flagship Project
+              </div>
+              <h3 className="text-2xl font-extrabold text-white tracking-tight">
+                {project.name}
+              </h3>
+            </div>
+
+            {/* Scrollable details content */}
+            <div className="flex-1 overflow-y-auto my-4 pr-1.5 space-y-4 custom-scrollbar">
+              <p className="text-xs text-blue-50/90 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Features */}
+              <div className="space-y-2">
+                <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
+                  Key Accomplishments
                 </h4>
-                <div className="flex flex-wrap gap-2">
+                <ul className="space-y-1.5">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-blue-50/90 leading-relaxed">
+                      <span className="w-1 h-1 rounded-full bg-white-50 mt-1.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Tech Stack */}
+              <div className="space-y-2">
+                <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
+                  Technologies Used
+                </h4>
+                <div className="flex flex-wrap gap-1">
                   {project.techStack.map((tech) => (
-                    <span 
-                      key={tech} 
-                      className="text-[9px] md:text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-white/5 border border-white/10 text-white-50"
+                    <span
+                      key={tech}
+                      className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white-50"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-
-              {/* Key Features */}
-              <div>
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-blue-50/70 mb-2 font-mono">
-                  Key Accomplishments
-                </h4>
-                <ul className="space-y-3">
-                  {project.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-blue-50/95 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white-50 mt-2 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
 
-            {/* Back Button */}
-            <div className="pt-4 border-t border-white/10">
-              <button 
+            {/* Stationary Action Buttons / Back Button */}
+            <div className="pt-4 border-t border-white/5">
+              <button
                 onClick={() => setIsFlipped(false)}
-                className="px-5 py-2.5 rounded-lg border border-white-50/20 bg-white/10 hover:bg-white/20 text-white font-semibold flex items-center gap-2 transition-all hover:scale-105 text-xs md:text-sm cursor-pointer"
+                className="w-full py-2.5 rounded-lg bg-white-50 text-black font-semibold text-xs uppercase tracking-wider transition-all"
               >
-                <ChevronLeft className="w-4 h-4" /> Go Back
+                Show Project Image
               </button>
             </div>
           </div>
-        </div>
+        )}
       </div>
-    </div>
+    </>
   );
 }
 
@@ -220,7 +291,7 @@ export default function Projects() {
 
   return (
     <section id="work" className="py-12 sm:py-20 max-w-[1400px] mx-auto px-6 md:px-12 space-y-16 sm:space-y-24">
-      
+
       {/* Flagship Projects Section */}
       <div>
         <div className="text-center mb-12 space-y-4">
@@ -272,11 +343,11 @@ export default function Projects() {
               <div className="h-40 rounded-lg overflow-hidden mb-6 relative border border-black-50">
                 <img src={project.image} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              
+
               <div className="flex-1 space-y-4">
                 <h4 className="text-xl font-bold text-white">{project.name}</h4>
                 <p className="text-sm text-blue-50 line-clamp-3">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-1.5 pt-2">
                   {project.techStack.slice(0, 4).map((tech) => (
                     <span key={tech} className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-black-200 border border-black-50 text-white-50">

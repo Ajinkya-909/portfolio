@@ -30,28 +30,28 @@
   "databases": {
     "name": "Databases",
     "items": [
-      { "name": "PostgreSQL", "icon": "" },
+      { "name": "PostgreSQL", "icon": "/logos/postgresql.svg" },
       { "name": "MongoDB", "icon": "/logos/mongodb.svg" },
-      { "name": "MySQL", "icon": "" }
+      { "name": "MySQL", "icon": "/logos/sql.svg" }
     ]
   },
   "tools": {
     "name": "Infrastructure & Tools",
     "items": [
-      { "name": "Docker", "icon": "" },
-      { "name": "Git", "icon": "" },
+      { "name": "Docker", "icon": "/logos/docker.svg" },
+      { "name": "Git", "icon": "/logos/git.svg" },
       { "name": "Linux", "icon": "" },
-      { "name": "Redis", "icon": "" },
-      { "name": "BullMQ", "icon": "" }
+      { "name": "Redis", "icon": "/logos/redis.svg" },
+      { "name": "BullMQ", "icon": "/logos/bullmq.svg" }
     ]
   },
   "learning": {
     "name": "Currently Learning",
     "items": [
-      { "name": "AWS", "icon": "" },
+      { "name": "AWS", "icon": "/logos/aws.svg" },
       { "name": "System Design", "icon": "" },
-      { "name": "Flutter", "icon": "" },
-      { "name": "Spring Boot", "icon": "" }
+      { "name": "Flutter", "icon": "/logos/flutter.svg" },
+      { "name": "Spring Boot", "icon": "/logos/spring.svg" }
     ]
   }
 }
