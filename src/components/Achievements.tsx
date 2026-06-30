@@ -28,12 +28,12 @@ export default function Achievements() {
 
       {/* Masonry Layout for Academics and Milestones */}
       <div className="px-6 md:px-12 mb-20">
-        {/* We use CSS columns for a true masonry effect */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        {/* We use CSS columns for a true masonry effect on desktop, and horizontal flex on mobile */}
+        <div className="flex flex-row overflow-x-auto gap-6 pb-6 custom-scrollbar snap-x snap-mandatory w-full md:block md:columns-2 lg:columns-3 md:gap-6 md:space-y-6">
           
           {/* Academics Cards */}
           {achievementsData.academics.map((academic, idx) => (
-            <div key={`acad-${idx}`} className="break-inside-avoid bg-black-100 border border-black-50 rounded-2xl p-6 relative group overflow-hidden">
+            <div key={`acad-${idx}`} className="break-inside-avoid bg-black-100 border border-black-50 rounded-2xl p-6 relative group overflow-hidden w-[280px] sm:w-[320px] md:w-auto shrink-0 md:shrink snap-start">
               <div className="absolute inset-0 bg-gradient-to-br from-white-50/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10 space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-black-200 border border-black-50 flex items-center justify-center">
@@ -55,7 +55,7 @@ export default function Achievements() {
 
           {/* Milestones Cards */}
           {achievementsData.milestones.map((milestone, idx) => (
-            <div key={`mile-${idx}`} className="break-inside-avoid bg-black-100 border border-black-50 rounded-2xl p-6 relative group overflow-hidden">
+            <div key={`mile-${idx}`} className="break-inside-avoid bg-black-100 border border-black-50 rounded-2xl p-6 relative group overflow-hidden w-[280px] sm:w-[320px] md:w-auto shrink-0 md:shrink snap-start">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10 space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-black-200 border border-black-50 flex items-center justify-center">
