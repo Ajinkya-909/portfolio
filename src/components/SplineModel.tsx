@@ -71,6 +71,7 @@ export default function SplineModel() {
   const [isLoading, setIsLoading] = useState(true);
   const [isContextLost, setIsContextLost] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const splineRef = useRef<any>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -96,6 +97,32 @@ export default function SplineModel() {
     };
   }, [isDesktop]);
 
+  // Viewport-aware rendering control using IntersectionObserver
+  useEffect(() => {
+    if (!isDesktop || isContextLost) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (splineRef.current) {
+          if (entry.isIntersecting) {
+            splineRef.current.play();
+          } else {
+            splineRef.current.stop();
+          }
+        }
+      },
+      { threshold: 0.05 } // Play when at least 5% is visible, stop when hidden
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isDesktop, isContextLost]);
+
   if (!isDesktop) {
     return null;
   }
@@ -107,6 +134,20 @@ export default function SplineModel() {
       </div>
     );
   }
+
+  const handleLoad = (splineApp: any) => {
+    splineRef.current = splineApp;
+    setIsLoading(false);
+
+    // Initial check: if loaded off-screen, stop it immediately
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) {
+        splineApp.stop();
+      }
+    }
+  };
 
   return (
     <div ref={containerRef} className="relative w-full h-[500px] xl:h-[600px] overflow-hidden flex items-center justify-center">
@@ -139,7 +180,7 @@ export default function SplineModel() {
         >
           <Spline 
             scene="https://prod.spline.design/32qv2birAJW4tCjP/scene.splinecode" 
-            onLoad={() => setIsLoading(false)}
+            onLoad={handleLoad}
           />
         </div>
 
