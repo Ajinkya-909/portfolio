@@ -78,7 +78,7 @@ export default function Contact() {
 
         <div className="mt-16 pt-8 border-t border-black-50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-50/50">
           <p>&copy; {new Date().getFullYear()} Ajinkya Deshmukh. All rights reserved.</p>
-          <p className="flex items-center gap-1">Built with React & Vite <span className="text-white-50">✨</span></p>
+          <p className="flex items-center gap-1">Built with React & Vite </p>
         </div>
       </div>
     </footer>

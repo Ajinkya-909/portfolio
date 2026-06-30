@@ -2,14 +2,14 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import SplineModel from "./SplineModel";
 
 const HERO_WORDS = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Backends", imgPath: "/images/ideas.svg" },
+  { text: "Pipelines", imgPath: "/images/concepts.svg" },
+  { text: "Systems", imgPath: "/images/designs.svg" },
+  { text: "Platforms", imgPath: "/images/code.svg" },
+  { text: "Backends", imgPath: "/images/ideas.svg" },
+  { text: "Pipelines", imgPath: "/images/concepts.svg" },
+  { text: "Systems", imgPath: "/images/designs.svg" },
+  { text: "Platforms", imgPath: "/images/code.svg" },
 ];
 
 export default function Hero() {
@@ -21,13 +21,13 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white-50/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        
+
         {/* Left Side: Content */}
         <div className="space-y-6 sm:space-y-8 flex flex-col justify-center relative z-20">
 
           <div className="hero-text text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight gap-3 md:gap-4">
             <h1>
-              Innovating{" "}
+              Engineering{" "}
               <span className="slide">
                 <span className="wrapper">
                   {HERO_WORDS.map((word, index) => (
@@ -43,13 +43,13 @@ export default function Hero() {
                 </span>
               </span>
             </h1>
-            <h1 className="text-white-50">and Creating</h1>
-            <h1 className="text-blue-50">Real World Projects</h1>
+            <h1 className="text-white-50">that Scale</h1>
+            <h1 className="text-blue-50">in Production</h1>
           </div>
 
           <p className="text-blue-50 max-w-xl text-sm sm:text-lg leading-relaxed">
-            I build fast, responsive, and scalable web applications that deliver real value. 
-            From crafting engaging front-end interfaces to developing powerful back-end systems.
+            I design backend architectures, distributed pipelines, and AI-powered systems —
+            from a real-time intrusion detection engine to a platform serving 1,000+ active users.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-4 sm:pt-6 border-t border-black-50">
-            {["CGPA 9.65", "Senior Developer Intern", "150+ LeetCode", "Pune, India"].map((chip) => (
+            {["Senior Developer Intern", "SentinelX — AI Pipeline", "1,000+ Users on CampusMate", "150+ LeetCode"].map((chip) => (
               <span key={chip} className="text-[10px] sm:text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-black-200 border border-black-50 text-white-50 flex items-center gap-1.5">
                 <Sparkles className="w-3 h-3 text-blue-50" />
                 {chip}
