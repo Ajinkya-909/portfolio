@@ -14,7 +14,7 @@ const HERO_WORDS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-fit sm:min-h-screen pt-28 sm:pt-24 pb-10 sm:pb-20 flex items-start sm:items-center overflow-hidden">
+    <section id="hero" className="relative min-h-fit sm:min-h-screen pt-28 sm:pt-24 pb-10 sm:pb-20 flex items-start sm:items-center overflow-hidden">
       {/* Decorative Grid & Blur */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0c0c0e_1px,transparent_1px),linear-gradient(to_bottom,#0c0c0e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_20%,#000_70%,transparent_100%)] pointer-events-none z-0" />
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-50/5 rounded-full blur-[120px] pointer-events-none" />

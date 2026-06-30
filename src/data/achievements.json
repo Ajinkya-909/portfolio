@@ -16,27 +16,60 @@
     },
     {
       "title": "Secondary School Certificate (SSC)",
-      "institution": "State Board",
+      "institution": "Maharashtra State Board",
       "year": "2022",
       "score": "90.8%",
       "icon": "book"
     }
   ],
-  "milestones": [
+  "achievements": [
     {
       "title": "Competitive Programming",
-      "achievements": ["150+ LeetCode Problems Solved", "100-Day LeetCode Streak"],
+      "subtitle": "LeetCode",
+      "year": "2025 - Present",
+      "highlight": "150+ Problems Solved",
+      "description": "Maintained a 100-day solving streak while strengthening Data Structures & Algorithms.",
       "icon": "code"
     },
     {
-      "title": "Hackathons",
-      "achievements": ["Hackathon Winner (Std 12)"],
+      "title": "Academic Excellence",
+      "subtitle": "Engineering",
+      "year": "2024 - Present",
+      "highlight": "CGPA 9.65",
+      "description": "Consistently ranked among the top-performing students throughout the program.",
+      "icon": "star"
+    },
+    {
+      "title": "Senior Developer Intern",
+      "subtitle": "CampusMate",
+      "year": "2025",
+      "highlight": "Full Stack Development",
+      "description": "Led development of student-focused platform features and production deployments.",
+      "icon": "briefcase"
+    },
+    {
+      "title": "Hackathon Winner",
+      "subtitle": "School Level",
+      "year": "2023",
+      "highlight": "1st Place",
+      "description": "Won a competitive hackathon by building an innovative software solution.",
       "icon": "trophy"
     },
     {
-      "title": "Professional Experience",
-      "achievements": ["Senior Developer Internship"],
-      "icon": "briefcase"
+      "title": "Project Portfolio",
+      "subtitle": "SentinelX",
+      "year": "2026",
+      "highlight": "Production-Grade Project",
+      "description": "Designed and built a full-stack AI-powered intrusion detection system from scratch.",
+      "icon": "shield"
+    },
+    {
+      "title": "Open Source & GitHub",
+      "subtitle": "Development",
+      "year": "2026",
+      "highlight": "Public Projects",
+      "description": "Maintaining production-quality repositories showcasing modern web development practices.",
+      "icon": "github"
     }
   ]
 }

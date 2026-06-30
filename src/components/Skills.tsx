@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import skillsData from "../data/skills.json";
 import { Code2, Laptop, Server, Database, Cpu, GraduationCap, Terminal } from "lucide-react";
 
@@ -5,6 +6,56 @@ type CategoryKey = keyof typeof skillsData;
 
 export default function Skills() {
   const categories = Object.keys(skillsData) as CategoryKey[];
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isPausedRef = useRef(false);
+  const resumeTimeoutRef = useRef<any>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let animationFrameId: number;
+
+    const scroll = () => {
+      const isMobile = window.innerWidth < 768;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      
+      if (isMobile && !isPausedRef.current && maxScroll > 0) {
+        // If we reached the end (with 1px buffer), loop back to the start
+        if (container.scrollLeft >= maxScroll - 1) {
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft += 0.8; // scroll speed in pixels per frame
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    animationFrameId = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleStart = () => {
+    isPausedRef.current = true;
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+  };
+
+  const handleEnd = () => {
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    resumeTimeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+    }, 1500); // Resume auto-scroll after 1.5 seconds of inactivity
+  };
 
   const getCategoryIcon = (key: CategoryKey) => {
     switch (key) {
@@ -36,14 +87,22 @@ export default function Skills() {
         </p>
       </div>
 
-      {/* Masonry Layout for Skills Categories */}
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      {/* Masonry Layout for Skills Categories on desktop, horizontal auto-scroller on mobile */}
+      <div
+        ref={scrollRef}
+        onMouseEnter={handleStart}
+        onMouseLeave={handleEnd}
+        onTouchStart={handleStart}
+        onTouchEnd={handleEnd}
+        onTouchCancel={handleEnd}
+        className="flex flex-row overflow-x-auto gap-6 pb-6 custom-scrollbar w-full md:block md:columns-2 lg:columns-3 md:gap-6 md:space-y-6"
+      >
         {categories.map((key) => {
           const category = skillsData[key];
           return (
             <div
               key={key}
-              className="break-inside-avoid bg-black-100 border border-black-50 rounded-2xl p-6 relative group overflow-hidden"
+              className="break-inside-avoid bg-black-100 border border-black-50 rounded-2xl p-6 relative group overflow-hidden w-[280px] sm:w-[320px] md:w-auto shrink-0 md:shrink"
             >
               {/* Subtle hover background gradient glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-white-50/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -13,20 +13,34 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className={`navbar ${isScrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner max-w-[1400px] w-full mx-auto flex items-center justify-between">
         {/* Left Side: Name */}
-        <a href="#" className="text-lg md:text-2xl font-bold tracking-widest uppercase hover:text-white-50 transition-colors">
+        <a
+          href="#hero"
+          onClick={(e) => handleScrollTo(e, "hero")}
+          className="text-lg md:text-2xl font-bold tracking-widest uppercase hover:text-white-50 transition-colors"
+        >
           Ajinkya Deshmukh
         </a>
 
         {/* Center: Navigation */}
         <nav className="hidden lg:flex items-center">
           <ul className="flex space-x-8">
-            {["Work", "Skills", "Experience", "Contact"].map((item) => (
+            {["Work", "Skills", "Experience", "About", "Contact"].map((item) => (
               <li key={item} className="group relative text-sm tracking-wide text-blue-50 hover:text-white transition-colors cursor-pointer">
-                <a href={`#${item.toLowerCase()}`}>{item}</a>
+                <a href={`#${item.toLowerCase()}`} onClick={(e) => handleScrollTo(e, item.toLowerCase())}>
+                  {item}
+                </a>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
               </li>
             ))}
@@ -37,6 +51,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <a
             href={socials.resume}
+            download="Ajinkya_Resume_2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2 text-sm font-semibold border border-black-50 bg-black-100 rounded-lg hover:bg-black-50 transition-all duration-300 hover:scale-[1.02]"

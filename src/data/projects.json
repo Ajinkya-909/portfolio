@@ -12,8 +12,8 @@
     ],
     "image": "/project images/sentinelx-desktop.webp",
     "smartphoneImage": "/project images/sentinelx-mobile.webp",
-    "github": "https://github.com/Ajinkya-909/SentinelX",
-    "live": "",
+    "github": "https://github.com/Ajinkya-909/SentinelX-Smart-Intrusion-Detection-System",
+    "live": "http://sentinelx-ids.vercel.app/",
     "docs": "#",
     "isFlagship": true
   },
@@ -31,12 +31,12 @@
     "image": "/project images/expenzo-desktop.webp",
     "smartphoneImage": "/project images/expenzo-mobile.webp",
     "github": "https://github.com/Ajinkya-909/Expenzo",
-    "live": "",
+    "live": "https://expenzo-project.vercel.app/",
     "isFlagship": true
   },
   {
-    "id": "campusmatemate",
-    "name": "CampusMateMate",
+    "id": "campusmate",
+    "name": "CampusMate",
     "description": "A collaborative platform designed to streamline student resource sharing and communication on campus.",
     "techStack": ["Next.js", "React", "Firebase", "Tailwind CSS", "Socket.IO"],
     "features": [
@@ -46,8 +46,8 @@
     ],
     "image": "/project images/campusmatemate-desktop.webp",
     "smartphoneImage": "/project images/campusmatemate-mobile.webp",
-    "github": "https://github.com/Ajinkya-909/CampusMateMate",
-    "live": "",
+    "github": "https://github.com/Ajinkya-909/",
+    "live": "https://mycampusmate.in/",
     "isFlagship": true
   },
   {
@@ -91,8 +91,8 @@
       "Real-time database updates and premium streaming interface"
     ],
     "image": "/project images/poadcaster.webp",
-    "github": "https://github.com/Ajinkya-909/Podcaster",
-    "live": "",
+    "github": "https://github.com/Ajinkya-909/Next-Js-Poadcaster-Project",
+    "live": "https://poadcaster.vercel.app/",
     "isFlagship": false
   },
   {
@@ -107,7 +107,7 @@
     ],
     "image": "/project images/promptly.webp",
     "github": "https://github.com/Ajinkya-909/Promptly",
-    "live": "",
+    "live": "https://promptly-ai-4u.vercel.app/",
     "isFlagship": false
   }
 ]

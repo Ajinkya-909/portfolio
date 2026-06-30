@@ -68,7 +68,7 @@ export default function Contact() {
               </a>
             </div>
             
-            <a href={socials.resume} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-black-50 bg-black-200 hover:border-white-50/30 text-white-50 text-sm font-semibold transition-all">
+            <a href={socials.resume} download="Ajinkya_Resume_2026.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-black-50 bg-black-200 hover:border-white-50/30 text-white-50 text-sm font-semibold transition-all">
               <Download className="w-4 h-4" />
               Download Resume
             </a>

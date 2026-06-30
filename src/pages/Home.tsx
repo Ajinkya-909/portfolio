@@ -13,11 +13,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Skills />
         <Projects />
         <Experience />
         <Achievements />
+        <About />
         <Contact />
       </main>
     </div>
