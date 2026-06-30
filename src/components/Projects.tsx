@@ -136,140 +136,148 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      {/* Mobile/Tablet Layout: Flat Toggle Card */}
-      <div className="w-full h-[550px] lg:hidden rounded-2xl overflow-hidden card-border bg-black-100 p-5 flex flex-col justify-between relative">
-        {!isFlipped ? (
-          <div className="flex flex-col justify-between h-full w-full">
-            {/* Project Title inside front card */}
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-bold text-white tracking-tight">{project.name}</h3>
-              <span className="text-[9px] font-mono uppercase tracking-wider text-blue-50/50">Featured Project</span>
-            </div>
-
-            {/* Clickable Image Container */}
-            <div
-              onClick={() => setIsFlipped(true)}
-              className="relative flex-1 w-full bg-black-300 flex items-center justify-center overflow-hidden rounded-xl cursor-pointer group border border-white/5"
-            >
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-30">
-                <span className="text-white text-xs font-semibold bg-black/80 px-3 py-1.5 rounded-full border border-white/10">Click to view info</span>
+      {/* Mobile/Tablet Layout: Flip Card */}
+      <div className="w-full h-[550px] lg:hidden relative perspective-1000">
+        <div className={`w-full h-full preserve-3d transition-transform duration-700 ease-in-out ${isFlipped ? 'rotate-y-180' : ''}`}>
+          
+          {/* Front Side: Project Image & Basic Actions */}
+          <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden card-border bg-black-100 p-5 flex flex-col justify-between">
+            <div className="flex flex-col justify-between h-full w-full">
+              {/* Project Title inside front card */}
+              <div className="flex justify-between items-center mb-3">
+                <h3 className="text-xl font-bold text-white tracking-tight">{project.name}</h3>
+                <span className="text-[9px] font-mono uppercase tracking-wider text-blue-50/50">Featured Project</span>
               </div>
-              <img
-                src={project.image}
-                alt={`${project.name} Desktop`}
-                className="max-w-[95%] max-h-[90%] object-contain rounded-lg shadow-xl"
-              />
-              {project.smartphoneImage && (
-                <div className="absolute right-3 bottom-3 w-[70px] h-[130px] flex items-center justify-center z-20">
-                  <img
-                    src={project.smartphoneImage}
-                    alt={`${project.name} Mobile`}
-                    className="max-w-full max-h-full object-contain rounded border border-white/20 shadow-xl"
-                  />
-                </div>
-              )}
-            </div>
 
-            {/* Actions Footer */}
-            <div className="mt-4 space-y-2.5">
-              <div className="flex items-center gap-3 pt-3 border-t border-white/5">
-                {project.live ? (
+              {/* Clickable Image Container */}
+              <div
+                onClick={() => setIsFlipped(true)}
+                className="relative flex-1 w-full bg-black-300 flex items-center justify-center overflow-hidden rounded-xl cursor-pointer group border border-white/5"
+              >
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-30">
+                  <span className="text-white text-xs font-semibold bg-black/80 px-3 py-1.5 rounded-full border border-white/10">Click to view info</span>
+                </div>
+                <img
+                  src={project.image}
+                  alt={`${project.name} Desktop`}
+                  className="max-w-[95%] max-h-[90%] object-contain rounded-lg shadow-xl"
+                />
+                {project.smartphoneImage && (
+                  <div className="absolute right-3 bottom-3 w-[70px] h-[130px] flex items-center justify-center z-20">
+                    <img
+                      src={project.smartphoneImage}
+                      alt={`${project.name} Mobile`}
+                      className="max-w-full max-h-full object-contain rounded border border-white/20 shadow-xl"
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* Actions Footer */}
+              <div className="mt-4 space-y-2.5">
+                <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                  {project.live ? (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 py-2.5 rounded-lg bg-white-50 text-black font-bold flex items-center justify-center gap-1.5 text-xs shadow-lg shadow-white/5"
+                    >
+                      View Live <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  ) : (
+                    <span className="flex-1 py-2.5 rounded-lg border border-black-50 bg-black-200 text-blue-50/30 font-semibold text-center text-xs">
+                      Project not live
+                    </span>
+                  )}
                   <a
-                    href={project.live}
+                    href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 py-2.5 rounded-lg bg-white-50 text-black font-bold flex items-center justify-center gap-1.5 text-xs shadow-lg shadow-white/5"
+                    className="p-2.5 rounded-lg border border-white/10 bg-black/45 hover:bg-black/65 text-white transition-all shadow-lg shrink-0"
+                    title="View Source on GitHub"
                   >
-                    View Live <ExternalLink className="w-3.5 h-3.5" />
+                    <GithubIcon className="w-4.5 h-4.5" />
                   </a>
-                ) : (
-                  <span className="flex-1 py-2.5 rounded-lg border border-black-50 bg-black-200 text-blue-50/30 font-semibold text-center text-xs">
-                    Project not live
-                  </span>
-                )}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2.5 rounded-lg border border-white/10 bg-black/45 hover:bg-black/65 text-white transition-all shadow-lg shrink-0"
-                  title="View Source on GitHub"
-                >
-                  <GithubIcon className="w-4.5 h-4.5" />
-                </a>
-              </div>
+                </div>
 
-              {/* View Info Trigger */}
-              <button
-                onClick={() => setIsFlipped(true)}
-                className="w-full py-2.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white-50 font-semibold text-xs uppercase tracking-wider transition-all"
-              >
-                View Info
-              </button>
+                {/* View Info Trigger */}
+                <button
+                  onClick={() => setIsFlipped(true)}
+                  className="w-full py-2.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white-50 font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                >
+                  View Info
+                </button>
+              </div>
             </div>
           </div>
-        ) : (
-          <div className="flex flex-col justify-between h-full w-full">
-            {/* Stationary Header */}
-            <div>
-              <div className="text-[10px] font-mono font-bold tracking-widest text-blue-50/60 uppercase mb-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-white-50 animate-pulse" />
-                Flagship Project
-              </div>
-              <h3 className="text-2xl font-extrabold text-white tracking-tight">
-                {project.name}
-              </h3>
-            </div>
 
-            {/* Scrollable details content */}
-            <div className="flex-1 overflow-y-auto my-4 pr-1.5 space-y-4 custom-scrollbar">
-              <p className="text-xs text-blue-50/90 leading-relaxed">
-                {project.description}
-              </p>
-
-              {/* Features */}
-              <div className="space-y-2">
-                <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
-                  Key Accomplishments
-                </h4>
-                <ul className="space-y-1.5">
-                  {project.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-blue-50/90 leading-relaxed">
-                      <span className="w-1 h-1 rounded-full bg-white-50 mt-1.5 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+          {/* Back Side: Detailed Project Information */}
+          <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden card-border bg-black-100 p-5 flex flex-col justify-between">
+            <div className="flex flex-col justify-between h-full w-full">
+              {/* Stationary Header */}
+              <div>
+                <div className="text-[10px] font-mono font-bold tracking-widest text-blue-50/60 uppercase mb-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white-50 animate-pulse" />
+                  Flagship Project
+                </div>
+                <h3 className="text-2xl font-extrabold text-white tracking-tight">
+                  {project.name}
+                </h3>
               </div>
 
-              {/* Tech Stack */}
-              <div className="space-y-2">
-                <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
-                  Technologies Used
-                </h4>
-                <div className="flex flex-wrap gap-1">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white-50"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {/* Scrollable details content */}
+              <div className="flex-1 overflow-y-auto my-4 pr-1.5 space-y-4 custom-scrollbar">
+                <p className="text-xs text-blue-50/90 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
+                    Key Accomplishments
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {project.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-blue-50/90 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-white-50 mt-1.5 shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="space-y-2">
+                  <h4 className="text-[10px] font-semibold uppercase tracking-widest text-blue-50/70 font-mono">
+                    Technologies Used
+                  </h4>
+                  <div className="flex flex-wrap gap-1">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white-50"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Stationary Action Buttons / Back Button */}
-            <div className="pt-4 border-t border-white/5">
-              <button
-                onClick={() => setIsFlipped(false)}
-                className="w-full py-2.5 rounded-lg bg-white-50 text-black font-semibold text-xs uppercase tracking-wider transition-all"
-              >
-                Show Project Image
-              </button>
+              {/* Stationary Action Buttons / Back Button */}
+              <div className="pt-4 border-t border-white/5">
+                <button
+                  onClick={() => setIsFlipped(false)}
+                  className="w-full py-2.5 rounded-lg bg-white-50 text-black font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                >
+                  Show Project Image
+                </button>
+              </div>
             </div>
           </div>
-        )}
+
+        </div>
       </div>
     </>
   );
