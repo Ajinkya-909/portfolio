@@ -13,6 +13,14 @@ const HERO_WORDS = [
 ];
 
 export default function Hero() {
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-fit sm:min-h-screen pt-28 sm:pt-24 pb-10 sm:pb-20 flex items-start sm:items-center overflow-hidden">
       {/* Decorative Grid & Blur */}
@@ -53,11 +61,19 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <a href="#contact" className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg bg-white-50 text-black text-sm sm:text-base font-bold flex items-center gap-2 hover:scale-105 transition-transform duration-300">
+            <a
+              href="#contact"
+              onClick={(e) => handleScrollTo(e, "contact")}
+              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg bg-white-50 text-black text-sm sm:text-base font-bold flex items-center gap-2 hover:scale-105 transition-transform duration-300"
+            >
               Contact Me
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="#work" className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg border border-black-50 bg-black-100 hover:bg-black-50 text-sm sm:text-base font-semibold flex items-center gap-2 transition-all">
+            <a
+              href="#work"
+              onClick={(e) => handleScrollTo(e, "work")}
+              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg border border-black-50 bg-black-100 hover:bg-black-50 text-sm sm:text-base font-semibold flex items-center gap-2 transition-all"
+            >
               View My Work
             </a>
           </div>
